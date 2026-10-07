@@ -1,0 +1,24 @@
+# environment.yml -- locked environment specification (handbook requirement:
+# "container definition or locked environment file").
+#
+# Build with:  mamba env create -f environment.yml   (or: conda env create -f environment.yml)
+# Activate with: conda activate distributed-blast
+#
+# Versions are pinned to the exact tool versions this project was developed
+# and benchmarked against (see README "Environment" section for how to
+# check your own installed versions against these).
+name: distributed-blast
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - blast=2.12.0
+  - diamond=2.1.*
+  - mmseqs2=15.*
+  - snakemake-minimal=7.*
+  - matplotlib=3.*
+  - pip
+  - pip:
+      - nbformat
