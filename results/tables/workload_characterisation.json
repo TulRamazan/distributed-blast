@@ -1,0 +1,52 @@
+[
+  {
+    "workload": "NGS_short_reads (real supplement + reference-windowed simulated)",
+    "length": {
+      "n": 815,
+      "min": 20,
+      "max": 150,
+      "mean": 124.14,
+      "median": 125,
+      "stdev": 21.32
+    },
+    "gc_content_pct": {
+      "n": 815,
+      "min": 26.0,
+      "max": 57.6,
+      "mean": 45.86,
+      "median": 45.6,
+      "stdev": 4.86
+    },
+    "n_real": 15,
+    "n_simulated": 800
+  },
+  {
+    "workload": "TGS_long_reads (real Nanopore SRR14011045, unmodified)",
+    "length": {
+      "n": 197,
+      "min": 80,
+      "max": 45510,
+      "mean": 11935.39,
+      "median": 7419,
+      "stdev": 11235.35
+    },
+    "gc_content_pct": {
+      "n": 197,
+      "min": 25.35,
+      "max": 69.09,
+      "mean": 43.81,
+      "median": 42.99,
+      "stdev": 6.94
+    },
+    "mean_phred_quality": {
+      "n": 197,
+      "min": 10.586909871244636,
+      "max": 29.737789203084834,
+      "mean": 23.15,
+      "median": 23.826683403568545,
+      "stdev": 3.51
+    },
+    "n_real": 197,
+    "n_simulated": 0
+  }
+]

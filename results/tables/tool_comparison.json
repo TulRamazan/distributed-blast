@@ -1,0 +1,47 @@
+[
+  {
+    "tool": "BLAST+ (blastx)",
+    "seconds": 0.7397,
+    "n_queries_with_hit": 57,
+    "recall_proxy": 1.0,
+    "mean_bitscore_ratio_vs_blastplus": 1.0,
+    "note": "reference tool for the sensitivity proxy",
+    "speedup_vs_blastplus": 1.0
+  },
+  {
+    "tool": "DIAMOND default",
+    "seconds": 0.6515,
+    "n_queries_with_hit": 25,
+    "recall_proxy": 0.439,
+    "mean_bitscore_ratio_vs_blastplus": 1.016,
+    "n_queries_compared": 25,
+    "speedup_vs_blastplus": 1.14
+  },
+  {
+    "tool": "DIAMOND --ultra-sensitive",
+    "seconds": 5.5977,
+    "n_queries_with_hit": 33,
+    "recall_proxy": 0.579,
+    "mean_bitscore_ratio_vs_blastplus": 1.086,
+    "n_queries_compared": 33,
+    "speedup_vs_blastplus": 0.13
+  },
+  {
+    "tool": "MMseqs2 -s 4.0 (default)",
+    "seconds": 3.2913,
+    "n_queries_with_hit": 16,
+    "recall_proxy": 0.281,
+    "mean_bitscore_ratio_vs_blastplus": 1.147,
+    "n_queries_compared": 16,
+    "speedup_vs_blastplus": 0.22
+  },
+  {
+    "tool": "MMseqs2 -s 7.5 (sensitive)",
+    "seconds": 3.2634,
+    "n_queries_with_hit": 16,
+    "recall_proxy": 0.281,
+    "mean_bitscore_ratio_vs_blastplus": 1.147,
+    "n_queries_compared": 16,
+    "speedup_vs_blastplus": 0.23
+  }
+]

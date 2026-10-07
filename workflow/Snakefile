@@ -1,0 +1,85 @@
+# Snakefile -- workflow definition for Project 25 (Distributed BLAST).
+#
+# Run the whole pipeline:      snakemake -j 2 --cores 2
+# Run just the headline result: snakemake -j 2 --cores 2 results/tables/scaling_benchmark.json
+# Dry run (see the plan without executing): snakemake -n
+#
+# Rules mirror the project's own task numbering (Task 2, 4/5, 6/7, 8, 3)
+# so the workflow graph doubles as a map of which script answers which
+# task in the project card.
+
+ROOT = ".."
+
+rule all:
+    input:
+        "../results/tables/database_build.json",
+        "../results/tables/workload_characterisation.json",
+        "../results/figures/query_length_distributions.png",
+        "../results/tables/scaling_benchmark.json",
+        "../results/figures/scaling_curve.png",
+        "../results/tables/tool_comparison.json",
+        "../results/figures/tool_comparison.png",
+        "../results/tables/db_growth_model.json",
+        "../results/figures/db_growth_model.png",
+
+rule fetch_data:
+    output:
+        "../data/raw/PROVENANCE.txt"
+    shell:
+        "bash ../scripts/fetch_data.sh"
+
+rule build_databases:
+    # Task 2: acquire real reference databases; document storage,
+    # preprocessing time and index size for each.
+    input:
+        "../data/raw/PROVENANCE.txt"
+    output:
+        "../results/tables/database_build.json"
+    shell:
+        "python3 ../scripts/build_databases.py"
+
+rule db_growth_model:
+    # Task 3: model search/index cost as a function of database size.
+    input:
+        "../results/tables/database_build.json"
+    output:
+        "../results/tables/db_growth_model.json",
+        "../results/figures/db_growth_model.png"
+    shell:
+        "python3 ../scripts/db_growth_model.py"
+
+rule build_workloads:
+    # Tasks 4 & 5: short-read (NGS) and long-read (TGS) query workloads,
+    # with length-distribution / QC characterisation.
+    input:
+        "../data/raw/PROVENANCE.txt"
+    output:
+        "../results/tables/workload_characterisation.json",
+        "../results/figures/query_length_distributions.png",
+        "../data/processed/query_short_reads.fasta",
+        "../data/processed/query_long_reads.fasta"
+    shell:
+        "python3 ../scripts/build_workloads.py"
+
+rule scaling_benchmark:
+    # Task 6 & 7: distributed search (query + database partitioning) and
+    # the measured scaling curve across worker counts.
+    input:
+        "../results/tables/database_build.json",
+        "../data/processed/query_short_reads.fasta"
+    output:
+        "../results/tables/scaling_benchmark.json",
+        "../results/figures/scaling_curve.png"
+    shell:
+        "cd ../scripts && python3 scaling_benchmark.py"
+
+rule tool_comparison:
+    # Task 8: BLAST+ vs DIAMOND vs MMseqs2, speed vs sensitivity trade-off.
+    input:
+        "../results/tables/database_build.json",
+        "../data/processed/query_short_reads.fasta"
+    output:
+        "../results/tables/tool_comparison.json",
+        "../results/figures/tool_comparison.png"
+    shell:
+        "python3 ../scripts/tool_comparison.py"

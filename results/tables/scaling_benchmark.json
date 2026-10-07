@@ -1,0 +1,155 @@
+[
+  {
+    "n_workers": 1,
+    "query_partitioning": {
+      "strategy": "query_partitioning",
+      "n_workers": 1,
+      "n_queries": 815,
+      "wall_seconds": 6.7987,
+      "per_worker_seconds": [
+        6.7714
+      ],
+      "merge_seconds": 0.0,
+      "total_hits": 2303,
+      "speedup_vs_1worker": 1.0
+    },
+    "database_partitioning": {
+      "strategy": "database_partitioning",
+      "n_workers": 1,
+      "n_queries": 815,
+      "wall_seconds": 6.8629,
+      "index_seconds": [
+        0.5469
+      ],
+      "per_worker_search_seconds": [
+        5.8478
+      ],
+      "merge_seconds": 0.0031,
+      "queries_with_a_hit": 503,
+      "speedup_vs_1worker": 1.0
+    }
+  },
+  {
+    "n_workers": 2,
+    "query_partitioning": {
+      "strategy": "query_partitioning",
+      "n_workers": 2,
+      "n_queries": 815,
+      "wall_seconds": 5.4062,
+      "per_worker_seconds": [
+        5.3511,
+        5.3947
+      ],
+      "merge_seconds": 0.0,
+      "total_hits": 2303,
+      "speedup_vs_1worker": 1.258
+    },
+    "database_partitioning": {
+      "strategy": "database_partitioning",
+      "n_workers": 2,
+      "n_queries": 815,
+      "wall_seconds": 3.5034,
+      "index_seconds": [
+        0.3929,
+        0.5425
+      ],
+      "per_worker_search_seconds": [
+        2.5995,
+        2.8095
+      ],
+      "merge_seconds": 0.0039,
+      "queries_with_a_hit": 522,
+      "speedup_vs_1worker": 1.959
+    }
+  },
+  {
+    "n_workers": 4,
+    "query_partitioning": {
+      "strategy": "query_partitioning",
+      "n_workers": 4,
+      "n_queries": 815,
+      "wall_seconds": 10.3888,
+      "per_worker_seconds": [
+        10.2534,
+        10.3742,
+        10.1044,
+        10.1767
+      ],
+      "merge_seconds": 0.0,
+      "total_hits": 2303,
+      "speedup_vs_1worker": 0.654
+    },
+    "database_partitioning": {
+      "strategy": "database_partitioning",
+      "n_workers": 4,
+      "n_queries": 815,
+      "wall_seconds": 2.9664,
+      "index_seconds": [
+        0.1956,
+        0.2785,
+        0.3327,
+        0.2975
+      ],
+      "per_worker_search_seconds": [
+        2.6246,
+        2.5915,
+        2.4671,
+        2.3606
+      ],
+      "merge_seconds": 0.0068,
+      "queries_with_a_hit": 526,
+      "speedup_vs_1worker": 2.314
+    }
+  },
+  {
+    "n_workers": 8,
+    "query_partitioning": {
+      "strategy": "query_partitioning",
+      "n_workers": 8,
+      "n_queries": 815,
+      "wall_seconds": 20.111,
+      "per_worker_seconds": [
+        13.1081,
+        20.0775,
+        19.6166,
+        19.9204,
+        19.9397,
+        20.0339,
+        19.7686,
+        19.9899
+      ],
+      "merge_seconds": 0.0,
+      "total_hits": 2303,
+      "speedup_vs_1worker": 0.338
+    },
+    "database_partitioning": {
+      "strategy": "database_partitioning",
+      "n_workers": 8,
+      "n_queries": 815,
+      "wall_seconds": 3.2433,
+      "index_seconds": [
+        0.2617,
+        0.2813,
+        0.2665,
+        0.3564,
+        0.2798,
+        0.3216,
+        0.3464,
+        0.3029
+      ],
+      "per_worker_search_seconds": [
+        2.4382,
+        2.7271,
+        2.7878,
+        2.735,
+        2.8294,
+        2.7464,
+        2.6462,
+        2.6171
+      ],
+      "merge_seconds": 0.0054,
+      "queries_with_a_hit": 536,
+      "speedup_vs_1worker": 2.116
+    }
+  }
+]

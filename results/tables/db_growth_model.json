@@ -1,0 +1,23 @@
+{
+  "blast": {
+    "index_time_fit": "time ~= 1.064e-03 * n_seqs^0.606",
+    "time_exponent": 0.606,
+    "index_size_fit": "bytes ~= 2.611e+03 * n_seqs^0.988",
+    "size_exponent": 0.988,
+    "bytes_per_sequence_at_largest": 2376.3
+  },
+  "diamond": {
+    "index_time_fit": "time ~= 1.011e-04 * n_seqs^0.835",
+    "time_exponent": 0.835,
+    "index_size_fit": "bytes ~= 5.625e+02 * n_seqs^0.999",
+    "size_exponent": 0.999,
+    "bytes_per_sequence_at_largest": 570.8
+  },
+  "mmseqs": {
+    "index_time_fit": "time ~= 6.254e-04 * n_seqs^0.564",
+    "time_exponent": 0.564,
+    "index_size_fit": "bytes ~= 5.832e+02 * n_seqs^1.002",
+    "size_exponent": 1.002,
+    "bytes_per_sequence_at_largest": 608.3
+  }
+}

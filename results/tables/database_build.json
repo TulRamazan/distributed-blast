@@ -1,0 +1,35 @@
+[
+  {
+    "name": "db_small",
+    "n_sequences": 300,
+    "raw_fasta_bytes": 164106,
+    "blast_makeblastdb_seconds": 0.0374,
+    "blast_index_bytes": 738053,
+    "diamond_makedb_seconds": 0.012,
+    "diamond_index_bytes": 169018,
+    "mmseqs_createdb_seconds": 0.0158,
+    "mmseqs_index_bytes": 178061
+  },
+  {
+    "name": "db_medium",
+    "n_sequences": 10300,
+    "raw_fasta_bytes": 5376103,
+    "blast_makeblastdb_seconds": 0.1878,
+    "blast_index_bytes": 23146045,
+    "diamond_makedb_seconds": 0.2134,
+    "diamond_index_bytes": 5541015,
+    "mmseqs_createdb_seconds": 0.1093,
+    "mmseqs_index_bytes": 5926199
+  },
+  {
+    "name": "db_large",
+    "n_sequences": 30300,
+    "raw_fasta_bytes": 16811071,
+    "blast_makeblastdb_seconds": 0.7725,
+    "blast_index_bytes": 72002571,
+    "diamond_makedb_seconds": 0.5845,
+    "diamond_index_bytes": 17295983,
+    "mmseqs_createdb_seconds": 0.2192,
+    "mmseqs_index_bytes": 18432656
+  }
+]
